@@ -12,6 +12,7 @@ import { TeamsComponent } from './teams/teams.component';
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
     NavBarComponent,
     TeamsComponent
   ],
