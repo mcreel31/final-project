@@ -24,6 +24,15 @@ button {
     font-family: Cambria, Georgia;
 }
 
+nav {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+
 /* everywhere else */
 
 * {
