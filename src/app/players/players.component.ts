@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Player } from '../players/player';
 
 @Component({
   selector: 'app-players',
@@ -6,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./players.component.css']
 })
 export class PlayersComponent implements OnInit {
-  player = 'Michael Jordan';
+  player: Player = {
+    id: 1,
+    name: 'Michael Jordan',
+    points: 43293
+  };
 
   constructor() { }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from '../teams/team';
 
 @Component({
   selector: 'app-teams',
@@ -6,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teams.component.css']
 })
 export class TeamsComponent implements OnInit {
+  team: Team = {
+    id: 1,
+    name: 'Chicago Bulls',
+    city: 'Chicago, Illinois'
+  };
 
   constructor() { }
 
