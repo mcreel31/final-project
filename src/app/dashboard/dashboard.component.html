@@ -1,3 +1,10 @@
-<p>
-  dashboard works!
-</p>
+<div>
+  <h5>
+    Dashboard
+  </h5>
+  Select your favorite team:
+  <select>
+    <option *ngFor="let team of teams">{{ team.name }}</option>
+  </select>
+</div>
+

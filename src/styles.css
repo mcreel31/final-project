@@ -3,9 +3,8 @@
 h1 {
     color: white;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 250%;
+    font-size: 320%;
     text-align: center;
-    background-color: slategrey;
 }
 h2,
 h3 {
@@ -27,11 +26,32 @@ button {
 
 nav {
     text-align: center;
+    font-size: 120%;
+    word-spacing: 100px;
+}
+
+h4 {
+    background-color: slategrey;
+}
+
+h5{
+    color: white;
+    font-size: 190%;
+    display: inline;
+    padding-right: 10px;
 }
 
 footer {
     text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
 }
+
+body {
+    background-color: black;
+}
+
 
 
 /* everywhere else */
