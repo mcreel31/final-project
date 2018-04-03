@@ -8,6 +8,7 @@ import { AppRouterModule } from './router.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TeamsComponent } from './teams/teams.component';
 import { PlayersComponent } from './players/players.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PlayersComponent } from './players/players.component';
     DashboardComponent,
     NavBarComponent,
     TeamsComponent,
-    PlayersComponent
+    PlayersComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
