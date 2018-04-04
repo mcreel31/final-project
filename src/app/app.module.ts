@@ -9,6 +9,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { TeamsComponent } from './teams/teams.component';
 import { PlayersComponent } from './players/players.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavBarComponent,
     TeamsComponent,
     PlayersComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    PlayerDetailComponent,
+    TeamDetailComponent
   ],
   imports: [
     BrowserModule,
