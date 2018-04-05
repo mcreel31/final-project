@@ -12,6 +12,7 @@ import { PlayersComponent } from './players/players.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
+import { PlayerService } from './players/player.service';
 
 
 @NgModule({
@@ -30,7 +31,7 @@ import { TeamDetailComponent } from './team-detail/team-detail.component';
     AppRouterModule,
     FormsModule
   ],
-  providers: [],
+  providers: [PlayerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
