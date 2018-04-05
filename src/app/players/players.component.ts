@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from '../players/player';
 
+
+
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
