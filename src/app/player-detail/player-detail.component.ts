@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerDetailComponent implements OnInit {
   players = [{"name": "John Wall"}, {"name": "Kevin Durant"}, {"name": "Kris Dunn"}]
-
+  
   constructor() { }
 
   ngOnInit() {

@@ -12,7 +12,12 @@
   </div>
 </div>
  -->
- Select your favorite team:
- <select>
-   <option *ngFor="let team of teams">{{ team.name }}</option>
- </select>
+<h6>
+ {{ mySimpleModel }}
+</h6>
+<div>
+   Select your favorite team:
+  <select [(ngModel)]="mySimpleModel">
+    <option *ngFor="let team of teams">{{ team.name }}</option>
+  </select>
+</div>

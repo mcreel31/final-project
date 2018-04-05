@@ -36,7 +36,14 @@ h4 {
 
 h5{
     color: white;
-    font-size: 190%;
+    font-size: 210%;
+    display: inline;
+    padding-right: 10px;
+}
+
+h6 {
+    color: white;
+    font-size: 150%;
     display: inline;
     padding-right: 10px;
 }

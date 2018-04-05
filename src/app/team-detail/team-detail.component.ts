@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+
 
 @Component({
   selector: 'app-team-detail',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamDetailComponent implements OnInit {
   teams = [{"name": "Wizards"}, {"name": "Warriors"}, {"name": "Bulls"}, {"name": "Raptors"}]
-  constructor() { }
+  mySimpleModel = "Pick a team!"
+  constructor() {}
 
   ngOnInit() {
   }

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -26,7 +27,8 @@ import { TeamDetailComponent } from './team-detail/team-detail.component';
   ],
   imports: [
     BrowserModule,
-    AppRouterModule
+    AppRouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
