@@ -8,6 +8,7 @@ import { Player } from '../players/player';
   templateUrl: './players.component.html',
   styleUrls: ['./players.component.css']
 })
+
 export class PlayersComponent implements OnInit {
   player: Player = {
     id: 1,
@@ -15,7 +16,7 @@ export class PlayersComponent implements OnInit {
     points: 43293
   };
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }
