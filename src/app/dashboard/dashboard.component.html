@@ -2,15 +2,8 @@
   <h5>
     Dashboard
   </h5>
-  Select your favorite team:
-  <select>
-    <option *ngFor="let team of teams">{{ team.name }}</option>
-  </select>
-
-  Select your favorite player:
-  <select>
-    <option *ngFor="let player of players">{{ player.name }}</option>
-  </select>
+  <app-team-detail></app-team-detail>
+  <app-player-detail></app-player-detail>
 
 </div>
 

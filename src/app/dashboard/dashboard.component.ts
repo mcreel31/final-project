@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   teams = [{"name": "Wizards"}, {"name": "Warriors"}, {"name": "Bulls"}]
-  players = [{"name:": "John Wall"}, {"name:": "Kevin Durant"}, {"name:": "John Wall"}, {"name:": "Lauri Markkanen"}]
+  players = [{"name": "John Wall"}, {"name": "Kevin Durant"}, {"name": "Kris Dunn"}]
   constructor() { }
 
   ngOnInit() {
