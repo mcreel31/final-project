@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NBA } from 'nba';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -13,7 +13,7 @@ import { PlayersComponent } from './players/players.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
-import { PlayerService } from './players/player.service';
+import { PlayersService } from './players/players.service';
 
 
 @NgModule({
@@ -30,9 +30,10 @@ import { PlayerService } from './players/player.service';
   imports: [
     BrowserModule,
     AppRouterModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [PlayerService],
+  providers: [PlayersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
