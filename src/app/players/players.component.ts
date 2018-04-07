@@ -20,6 +20,7 @@ export class PlayersComponent implements OnInit {
     this._playersService.getPlayers()
       .subscribe(players  => {
         this.players = players;
+        console.log(this.players)
       },
         error => console.log(error)
       );
