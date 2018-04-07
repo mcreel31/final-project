@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from '../players/player';
+import { PlayersService } from '../players/players.service';
 
 
 
@@ -10,15 +11,22 @@ import { Player } from '../players/player';
 })
 
 export class PlayersComponent implements OnInit {
-  player: Player = {
-    id: 1,
-    name: 'Michael Jordan',
-    points: 43293
-  };
+  players: Player[] = [];
+  selectedPlayer: Player;
 
-  constructor() {}
+  constructor(private _playersService: PlayersService) { }
 
   ngOnInit() {
+    this._playersService.getPlayers()
+      .subscribe(players  => {
+        this.players = players;
+      },
+        error => console.log(error)
+      );
+  }
+
+  onSelect(player: Player): void {
+    this.selectedPlayer = player;
   }
 
 }
