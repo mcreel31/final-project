@@ -9,7 +9,7 @@ import { HttpHeaders } from '@angular/common/http';
 
 @Injectable()
 export class PlayersService {
-  private playersUrl =  "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/roster_players.json?fordate=20180328";
+  private playersUrl =  "https://api.mysportsfeeds.com/v1.2/pull/nba/2017-2018-regular/cumulative_player_stats.json?playerstats=2PA,2PM,3PA,3PM,FTA,FTM";
   constructor( private _http: HttpClient) { }
 
   getPlayers(): Observable<PlayerInfo.RootObject> {

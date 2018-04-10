@@ -21,10 +21,7 @@ export class PlayersComponent implements OnInit {
      this._playersService.getPlayers()
      .subscribe(data => {
         this.AllData = data;
-        //this prints the entire blob of json returned from the api
-        console.log(this.AllData)
-        //this prints 'undefined'
-        console.log(this.AllData.cumulativeplayerstats)
+        this.players = this.AllData.cumulativeplayerstats.playerstatsentry.map(a => a.player)
       },
         error => console.log(error)
       );

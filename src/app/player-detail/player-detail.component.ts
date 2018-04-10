@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PlayerInfo } from '../players/player';
+import { PlayersService } from '../players/players.service'
 
 @Component({
   selector: 'app-player-detail',
@@ -8,12 +9,20 @@ import { PlayerInfo } from '../players/player';
 })
 export class PlayerDetailComponent implements OnInit {
   //players = [{"name": "John Wall"}, {"name": "Kevin Durant"}, {"name": "Kris Dunn"}]
+  AllData : PlayerInfo.RootObject
 
-  @Input() player: PlayerInfo.Player;
+  @Input() players: PlayerInfo.Player[];
   
-  constructor() { }
+  constructor(private _playersService: PlayersService) { }
 
   ngOnInit() {
+    this._playersService.getPlayers()
+    .subscribe(data => {
+      this.AllData = data;
+      this.players = this.AllData.cumulativeplayerstats.playerstatsentry.map(a => a.player)
+    },
+      error => console.log(error)
+    );
   }
 
 }
