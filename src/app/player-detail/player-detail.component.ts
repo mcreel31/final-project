@@ -10,7 +10,7 @@ import { PlayersService } from '../players/players.service'
 export class PlayerDetailComponent implements OnInit {
   //players = [{"name": "John Wall"}, {"name": "Kevin Durant"}, {"name": "Kris Dunn"}]
   AllData : PlayerInfo.RootObject
-  SelectedPlayer = 'Pick a player!'
+  SelectedPlayer : string = 'Pick a player!'
 
   players : PlayerInfo.Player[]
   //@Input() players: PlayerInfo.Player[];
@@ -22,6 +22,7 @@ export class PlayerDetailComponent implements OnInit {
     .subscribe(data => {
       this.AllData = data;
       this.players = this.AllData.cumulativeplayerstats.playerstatsentry.map(a => a.player)
+      this.SelectedPlayer = this.players[0].FirstName + " " + this.players[0].LastName
     },
       error => console.log(error)
     );

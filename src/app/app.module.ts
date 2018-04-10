@@ -14,6 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { TeamDetailComponent } from './team-detail/team-detail.component';
 import { PlayersService } from './players/players.service';
+import { TeamsService } from './teams/teams.service'
 
 
 @NgModule({
@@ -33,7 +34,10 @@ import { PlayersService } from './players/players.service';
     FormsModule,
     HttpClientModule
   ],
-  providers: [PlayersService],
+  providers: [
+    PlayersService,
+    TeamsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

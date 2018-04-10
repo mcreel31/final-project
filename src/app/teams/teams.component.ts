@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Team } from '../teams/team';
+import { TeamInfo } from '../teams/team';
+import { TeamsService } from './teams.service';
 
 @Component({
   selector: 'app-teams',
@@ -7,15 +8,21 @@ import { Team } from '../teams/team';
   styleUrls: ['./teams.component.css']
 })
 export class TeamsComponent implements OnInit {
-  team: Team = {
-    id: 1,
-    name: 'Chicago Bulls',
-    city: 'Chicago, Illinois'
-  };
+  AllData : TeamInfo.RootObject
+  confarrs : TeamInfo.Team[][] = [];
+  teams : TeamInfo.Team[] = []
 
-  constructor() { }
+  constructor(private _teamsService: TeamsService) { }
 
   ngOnInit() {
-  }
+    this._teamsService.getTeams()
+    .subscribe(data => {
+       this.AllData = data;
+       this.confarrs = this.AllData.conferenceteamstandings.conference.map(a => a.teamentry.map(x => x.team))
+       this.teams = this.confarrs[0].concat(this.confarrs[1])
+      },
+       error => console.log(error)
+     );
+ }
 
 }
