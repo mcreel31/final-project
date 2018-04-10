@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Player } from '../players/player';
+import { PlayerInfo } from '../players/player';
 
 @Component({
   selector: 'app-player-detail',
@@ -9,7 +9,7 @@ import { Player } from '../players/player';
 export class PlayerDetailComponent implements OnInit {
   //players = [{"name": "John Wall"}, {"name": "Kevin Durant"}, {"name": "Kris Dunn"}]
 
-  @Input() player: Player;
+  @Input() player: PlayerInfo.Player;
   
   constructor() { }
 
