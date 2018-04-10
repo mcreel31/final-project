@@ -1,18 +1,9 @@
+<h6>
+  {{ selectedTeam }}
+</h6>
 <div>
-  <h5>
-    Teams
-  </h5>
-  <div>
-
-<h2>
-  {{team.name}} Details
-</h2>
-<div>
-  <span>Id: </span> {{team.id}}
-</div>
-<div>
-  <span>Name: </span> {{team.name}}
-</div>
-<div>
-  <span>City: </span> {{team.city}}
+  Select your favorite team:
+  <select [(ngModel)]="selectedTeam" (ngModelChange)="event()">
+    <option *ngFor="let team of teams">{{ team.City }} {{ team.Name }}</option>
+  </select>
 </div>
