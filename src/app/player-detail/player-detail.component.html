@@ -17,7 +17,13 @@
  </h6>
  <div>
   Select your favorite player:
-  <select [(ngModel)]="SelectedPlayer">
+  <select [(ngModel)]="SelectedPlayer" (ngModelChange) = "event()">
     <option *ngFor="let player of players">{{ player.FirstName }} {{ player.LastName }}</option>
   </select>
+ </div>
+ <br/><br/>
+ <div>
+   [General Player Information]
+    {{ JerseyNumber }}
+    {{ Position }}
  </div>
