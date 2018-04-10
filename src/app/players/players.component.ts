@@ -21,6 +21,7 @@ export class PlayersComponent implements OnInit {
      this._playersService.getPlayers()
      .subscribe(data => {
         this.AllData = data;
+        console.log(this.AllData)
         this.players = this.AllData.cumulativeplayerstats.playerstatsentry.map(a => a.player)
       },
         error => console.log(error)
