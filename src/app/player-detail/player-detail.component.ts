@@ -10,8 +10,10 @@ import { PlayersService } from '../players/players.service'
 export class PlayerDetailComponent implements OnInit {
   //players = [{"name": "John Wall"}, {"name": "Kevin Durant"}, {"name": "Kris Dunn"}]
   AllData : PlayerInfo.RootObject
+  SelectedPlayer = 'Pick a player!'
 
-  @Input() players: PlayerInfo.Player[];
+  players : PlayerInfo.Player[]
+  //@Input() players: PlayerInfo.Player[];
   
   constructor(private _playersService: PlayersService) { }
 

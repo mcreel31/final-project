@@ -12,8 +12,12 @@
   </div>
 </div>
  -->
-
- Select your favorite player:
- <select>
-   <option *ngFor="let player of players">{{ player.FirstName }} {{ player.LastName }}</option>
- </select>
+ <h6>
+  {{ SelectedPlayer }}
+ </h6>
+ <div>
+  Select your favorite player:
+  <select [(ngModel)]="SelectedPlayer">
+    <option *ngFor="let player of players">{{ player.FirstName }} {{ player.LastName }}</option>
+  </select>
+ </div>
