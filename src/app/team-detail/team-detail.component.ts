@@ -30,15 +30,17 @@ export class TeamDetailComponent implements OnInit {
        this.confarrs = this.AllData.conferenceteamstandings.conference.map(a => a.teamentry.map(x => x.team))
        this.teams = this.confarrs[0].concat(this.confarrs[1])
        this.selectedTeam = this.teams[0].City + " " + this.teams[0].Name;
-      //  this.AllTeamEntry = this.AllData.conferenceteamstandings.conference[0].teamentry
-      //  .concat(this.AllData.conferenceteamstandings.conference[1].teamentry)
-      //  .find(i => i.name === this.selectedTeam[0]);
-      },
+       this.AllTeamEntry = this.AllTeamEntry = this.AllData.conferenceteamstandings.conference[0].teamentry
+        .concat(this.AllData.conferenceteamstandings.conference[1].teamentry)
+      this.TeamGeneralInfo = this.AllTeamEntry.find(i => i.team.City + " " + i.team.Name === this.selectedTeam);
+    },
        error => console.log(error)
      );
  }
 
  event() {
+  this.TeamGeneralInfo = this.AllTeamEntry.find(i => i.team.City + " " + i.team.Name === this.selectedTeam);
+  //console.log(this.TeamGeneralInfo)
    /*
     this.TeamGeneralInfo = this.AllData.conferenceteamstandings.conference
        .find(i => i.name === this.selectedTeam[0]);
@@ -47,7 +49,6 @@ export class TeamDetailComponent implements OnInit {
     this.Wins = this.TeamGeneralInfo.;
     this.Losses = this.TeamGeneralInfo.;
     */
-    
  }
 
 }
