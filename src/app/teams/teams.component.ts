@@ -38,7 +38,14 @@ export class TeamsComponent implements OnInit {
   .subscribe(data => {
      this.AllLogData = data;
      this.GamesLog = this.AllLogData.teamgamelogs.gamelogs
-     console.log(this.GamesLog)
+     let size = this.GamesLog.length
+     if (size >= 5) {
+      this.GamesLog = this.GamesLog.slice(this.GamesLog.length-6, this.GamesLog.length-1)
+     } else {
+      this.GamesLog = this.GamesLog.slice(0, this.GamesLog.length-1)
+     }
+     
+     console.log(this.GamesLog[0].stats)
     },
      error => console.log(error)
    );

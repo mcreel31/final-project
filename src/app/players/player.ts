@@ -7,55 +7,55 @@ export module PlayerInfo {
         JerseyNumber: string;
         Position: string;
     }
-  
+
     export interface Team {
         ID: string;
         City: string;
         Name: string;
         Abbreviation: string;
     }
-  
+
     export interface GamesPlayed {
-        abbreviation: string;
-        text: string;
+        "@abbreviation": string;
+        "#text": string;
     }
-  
+
     export interface Fg2PtAtt {
-        category: string;
-        abbreviation: string;
-        text: string;
+        "@category": string;
+        "@abbreviation": string;
+        "#text": string;
     }
-  
+
     export interface Fg2PtMade {
-        category: string;
-        abbreviation: string;
-        text: string;
+        "@category": string;
+        "@abbreviation": string;
+        "#text": string;
     }
-  
+
     export interface Fg3PtAtt {
-        category: string;
-        abbreviation: string;
-        text: string;
+        "@category": string;
+        "@abbreviation": string;
+        "#text": string;
     }
-  
+
     export interface Fg3PtMade {
-        category: string;
-        abbreviation: string;
-        text: string;
+        "@category": string;
+        "@abbreviation": string;
+        "#text": string;
     }
-  
+
     export interface FtAtt {
-        category: string;
-        abbreviation: string;
-        text: string;
+        "@category": string;
+        "@abbreviation": string;
+        "#text": string;
     }
-  
+
     export interface FtMade {
-        category: string;
-        abbreviation: string;
-        text: string;
+        "@category": string;
+        "@abbreviation": string;
+        "#text": string;
     }
-  
+
     export interface Stats {
         GamesPlayed: GamesPlayed;
         Fg2PtAtt: Fg2PtAtt;
@@ -65,21 +65,21 @@ export module PlayerInfo {
         FtAtt: FtAtt;
         FtMade: FtMade;
     }
-  
+
     export interface Playerstatsentry {
         player: Player;
         team: Team;
         stats: Stats;
     }
-  
+
     export interface Cumulativeplayerstats {
         lastUpdatedOn: string;
         playerstatsentry: Playerstatsentry[];
     }
-  
+
     export interface RootObject {
         cumulativeplayerstats: Cumulativeplayerstats;
     }
-  
+
 }
-  
+

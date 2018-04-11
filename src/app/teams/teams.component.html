@@ -7,3 +7,26 @@
     <option *ngFor="let team of teams">{{ team.City }} {{ team.Name }}</option>
   </select>
 </div>
+<div>
+  <br/>
+  Last 5 Games:
+  <br/>
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Home Team</th>
+      <th>Away Team</th>
+      <th>Outcome</th>
+      <th>Points Scored</th>
+      <th>Points Allowed</th>
+    </tr>
+    <tr *ngFor="let game of GamesLog">
+      <td>{{ game.game.date }}</td>
+      <td>{{ game.game.homeTeam.Name }}</td>
+      <td>{{ game.game.awayTeam.Name }}</td>
+      <td>{{ game.stats.Wins["#text"] }}</td>
+      <td>{{ game.stats.Pts["#text"] }}</td>
+      <td>{{ game.stats.PtsAgainst["#text"] }}</td>
+    </tr>
+  </table>
+</div>
