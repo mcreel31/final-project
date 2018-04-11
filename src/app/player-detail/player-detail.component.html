@@ -21,9 +21,23 @@
     <option *ngFor="let player of players">{{ player.FirstName }} {{ player.LastName }}</option>
   </select>
  </div>
- <br/><br/>
+ <br/>
  <div>
-   [General Player Information]
-    {{ JerseyNumber }}
-    {{ Position }}
+    <table id="GeneralPlayerInfo" cellspacing="0" summary="General Player information.  ">
+      <caption>General Player Information</caption>
+      <tr>
+        <th scope="row" abbr="Jersey Number">Jersey Number</th>
+        <th scope="row" abbr="Position">Position</th>
+        <th scope="row" abbr="City">City</th>
+        <th scope="row" abbr="Team Name">Team Name</th>
+      </tr>
+      <!-- <tr *ngFor="let ID of Player"> -->
+      <tr>
+        <th scope="row"> {{ JerseyNumber }}</th>
+        <td>{{ Position }}</td>
+        <td>{{ City }}</td>
+        <td>{{ TeamName }}</td>
+      </tr>
+    </table>
+
  </div>

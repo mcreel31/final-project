@@ -43,6 +43,8 @@ export class PlayerDetailComponent implements OnInit {
      this.SelectedPlayer.split(" ", 2)[0] && i.player.LastName === this.SelectedPlayer.split(" ", 2)[1]);
      this.JerseyNumber = this.GeneralInfo.player.JerseyNumber;
      this.Position = this.GeneralInfo.player.Position;
+     this.City = this.GeneralInfo.team.City;
+     this.TeamName = this.GeneralInfo.team.Name;
   }
 
 }

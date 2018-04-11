@@ -20,6 +20,24 @@
   <select [(ngModel)]="selectedTeam">
     <option *ngFor="let team of teams">{{ team.City }} {{ team.Name }}</option>
   </select>
-
-  
 </div>
+<br/>
+<div>
+    <table id="GeneralTeamInfo" cellspacing="0" summary="General Team information.  ">
+      <caption>General Team Information</caption>
+      <tr>
+        <th scope="row" abbr="Abbreviation">Abbreviation</th>
+        <th scope="row" abbr="Rank">Rank</th>
+        <th scope="row" abbr="Wins">Wins</th>
+        <th scope="row" abbr="Losses">Losses</th>
+      </tr>
+      <!-- <tr *ngFor="let team of teams"> -->
+      <tr>
+        <th scope="row"> </th>
+        <td> </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+ </div>

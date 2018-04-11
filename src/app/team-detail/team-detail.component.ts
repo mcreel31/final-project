@@ -14,6 +14,11 @@ export class TeamDetailComponent implements OnInit {
   confarrs : TeamInfo.Team[][] = []
   teams : TeamInfo.Team[] = []
   selectedTeam : string = 'Pick a team!'
+  TeamGeneralInfo: TeamInfo.Conference
+  Abbreviation: string
+  Rank: string
+  Wins: string
+  Losses: string
 
   constructor(private _teamsService: TeamsService) { }
 
@@ -23,10 +28,24 @@ export class TeamDetailComponent implements OnInit {
        this.AllData = data;
        this.confarrs = this.AllData.conferenceteamstandings.conference.map(a => a.teamentry.map(x => x.team))
        this.teams = this.confarrs[0].concat(this.confarrs[1])
-       this.selectedTeam = this.teams[0].City + " " + this.teams[0].Name
+       this.selectedTeam = this.teams[0].City + " " + this.teams[0].Name;
+       this.TeamGeneralInfo = this.AllData.conferenceteamstandings.conference
+       .find(i => i.name === this.selectedTeam[0]);
       },
        error => console.log(error)
      );
+ }
+
+ event() {
+   /*
+    this.TeamGeneralInfo = this.AllData.conferenceteamstandings.conference
+       .find(i => i.name === this.selectedTeam[0]);
+    this.Abbreviation = this.TeamGeneralInfo.;
+    this.Rank = this.TeamGeneralInfo.;
+    this.Wins = this.TeamGeneralInfo.;
+    this.Losses = this.TeamGeneralInfo.;
+    */
+    
  }
 
 }
