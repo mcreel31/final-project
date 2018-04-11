@@ -8,32 +8,32 @@ export module TeamInfo {
     }
 
     export interface GamesPlayed {
-        abbreviation: string;
-        text: string;
+        "@abbreviation": string;
+        "#text": string;
     }
 
     export interface Pts {
-        category: string;
-        abbreviation: string;
-        text: string;
+        "@category": string;
+        "@abbreviation": string;
+        "#text": string;
     }
 
     export interface PtsAgainst {
-        category: string;
-        abbreviation: string;
-        text: string;
+        "@category": string;
+        "@abbreviation": string;
+        "#text": string;
     }
 
     export interface Wins {
-        category: string;
-        abbreviation: string;
-        text: string;
+        "@category": string;
+        "@abbreviation": string;
+        "#text": string;
     }
 
     export interface Losses {
-        category: string;
-        abbreviation: string;
-        text: string;
+        "@category": string;
+        "@abbreviation": string;
+        "#text": string;
     }
 
     export interface Stats {
@@ -51,7 +51,7 @@ export module TeamInfo {
     }
 
     export interface Conference {
-        name: string;
+        "@name": string;
         teamentry: Teamentry[];
     }
 
@@ -65,3 +65,4 @@ export module TeamInfo {
     }
 
 }
+
