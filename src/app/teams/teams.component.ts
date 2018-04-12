@@ -29,6 +29,7 @@ export class TeamsComponent implements OnInit {
        this.confarrs = this.AllData.conferenceteamstandings.conference.map(a => a.teamentry.map(x => x.team))
        this.teams = this.confarrs[0].concat(this.confarrs[1])
        this.selectedTeam = this.teams[0].City + " " + this.teams[0].Name
+       this.event()
       },
        error => console.log(error)
      );
@@ -39,8 +40,8 @@ export class TeamsComponent implements OnInit {
      this.AllLogData = data;
      this.GamesLog = this.AllLogData.teamgamelogs.gamelogs
      let size = this.GamesLog.length
-     if (size >= 5) {
-      this.GamesLog = this.GamesLog.slice(this.GamesLog.length-6, this.GamesLog.length-1)
+     if (size > 10) {
+      this.GamesLog = this.GamesLog.slice(this.GamesLog.length-11, this.GamesLog.length-1)
      } else {
       this.GamesLog = this.GamesLog.slice(0, this.GamesLog.length-1)
      }
