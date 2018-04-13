@@ -33,6 +33,7 @@ export class TeamDetailComponent implements OnInit {
        this.AllTeamEntry = this.AllTeamEntry = this.AllData.conferenceteamstandings.conference[0].teamentry
         .concat(this.AllData.conferenceteamstandings.conference[1].teamentry)
       this.TeamGeneralInfo = this.AllTeamEntry.find(i => i.team.City + " " + i.team.Name === this.selectedTeam);
+      this.event();
     },
        error => console.log(error)
      );
@@ -40,15 +41,11 @@ export class TeamDetailComponent implements OnInit {
 
  event() {
   this.TeamGeneralInfo = this.AllTeamEntry.find(i => i.team.City + " " + i.team.Name === this.selectedTeam);
-  //console.log(this.TeamGeneralInfo)
-   /*
-    this.TeamGeneralInfo = this.AllData.conferenceteamstandings.conference
-       .find(i => i.name === this.selectedTeam[0]);
-    this.Abbreviation = this.TeamGeneralInfo.;
-    this.Rank = this.TeamGeneralInfo.;
-    this.Wins = this.TeamGeneralInfo.;
-    this.Losses = this.TeamGeneralInfo.;
-    */
+    
+    this.Abbreviation = this.TeamGeneralInfo.team.Abbreviation;
+    this.Rank = this.TeamGeneralInfo.rank;
+    this.Wins = this.TeamGeneralInfo.stats.Wins["#text"];
+    this.Losses = this.TeamGeneralInfo.stats.Losses["#text"];
  }
 
 }

@@ -32,6 +32,7 @@ export class PlayerDetailComponent implements OnInit {
       this.GeneralInfo = this.AllData.cumulativeplayerstats.playerstatsentry
       .find(i => i.player.FirstName === 
         this.SelectedPlayer.split(" ", 2)[0] && i.player.LastName === this.SelectedPlayer.split(" ", 2)[1]);
+      this.event();
     },
       error => console.log(error)
     );
