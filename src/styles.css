@@ -1,12 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 h1 {
-    color: white;
+    color: black;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 320%;
     text-align: center;
 }
-h2,
+h2{
+    color: black;
+    font-size: 100%;
+    display: inline;
+}
 h3 {
     color: #444;
     font-family: Helvetica, Arial, sans-serif;
@@ -31,21 +35,27 @@ nav {
 }
 
 h4 {
-    background-color: slategrey;
+    background-color: #bdcebe;
 }
 
 h5{
-    color: white;
+    color: black;
     font-size: 210%;
     display: inline;
     padding-right: 10px;
 }
 
 h6 {
-    color: white;
+    color:black;
     font-size: 150%;
     display: inline;
     padding-right: 10px;
+    text-decoration: underline;
+}
+
+plaintext {
+    color: black;
+    font-size: 100%;
 }
 
 footer {
@@ -53,19 +63,29 @@ footer {
     position: fixed;
     bottom: 0px;
     width: 100%;
+    color: black;
 }
 
 body {
-    background-color: black;
+    background-color: #bdcebe;
 }
 
 table, th, td {
-    border: 1px solid white;
+    border: 1px solid black;
     border-collapse: collapse;
 }
 
 th, td {
     padding: 5px;
+    color: black;
+}
+
+td {
+    text-align: right;
+}
+
+th {
+    font-weight: bold;
 }
 
 
