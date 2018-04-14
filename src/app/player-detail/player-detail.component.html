@@ -25,18 +25,22 @@
  <div>
     <style type="text/css">
       table { width: 100%; }
-      td.colA { width: 25%; }
-      td.colB { width: 25%; }
-      td.colC { width: 25%; }
-      td.colD { width: 25%; }
+      td.colA { width: 16.67%; }
+      td.colB { width: 16.67%; }
+      td.colC { width: 16.67%; }
+      td.colD { width: 16.67%; }
+      td.colD { width: 16.67%; }
+      td.colD { width: 16.67%; }
     </style>
     <table id="GeneralPlayerInfo" cellspacing="0" summary="General Player information.  ">
-      <caption>General Player Information</caption>
+      <caption><h2>General Player Information</h2></caption>
       <tr>
         <th scope="row" abbr="Jersey" class = "colA" >Jersey</th>
         <th scope="row" abbr="Position" class = "colB" >Position</th>
         <th scope="row" abbr="City" class = "colC" >City</th>
         <th scope="row" abbr="Team Name" class = "colD" >Team Name</th>
+        <th scope="row" abbr="Games Played" class = "colE" >Games Played</th>
+        <th scope="row" abbr="PPG" class = "colF" >Points Per Game</th>
       </tr>
       <!-- <tr *ngFor="let ID of Player"> -->
       <tr>
@@ -44,6 +48,8 @@
         <td class = "colB" style="text-align:center">{{ Position }}</td>
         <td class = "colC" style="text-align:center">{{ City }}</td>
         <td class = "colD" style="text-align:center">{{ TeamName }}</td>
+        <td class = "colE" style="text-align:center">{{ GamesPlayed }}</td>
+        <td class = "colF" style="text-align:center">{{ PPG }}</td>
       </tr>
     </table>
 
