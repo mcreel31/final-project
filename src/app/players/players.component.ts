@@ -41,7 +41,6 @@ export class PlayersComponent implements OnInit {
      this._playersService.getPlayers()
      .subscribe(data => {
         this.AllData = data;
-        console.log(this.AllData)
         this.players = this.AllData.cumulativeplayerstats.playerstatsentry.map(a => a.player)
         this.selectedPlayer = this.players[0].FirstName + " " + this.players[0].LastName
         this.statistics = this.AllData.cumulativeplayerstats.playerstatsentry
@@ -52,11 +51,23 @@ export class PlayersComponent implements OnInit {
       },
         error => console.log(error)
       );
+      this._playersService.getPlayers()
+     .subscribe(data => {
+        this.AllData = data;
+        this.players = this.AllData.cumulativeplayerstats.playerstatsentry.map(a => a.player)
+        this.selectedPlayer2 = this.players[0].FirstName + " " + this.players[0].LastName
+        this.statistics2 = this.AllData.cumulativeplayerstats.playerstatsentry
+          .find(i => i.player.FirstName === 
+        this.selectedPlayer2.split(" ", 2)[0] && i.player.LastName === this.selectedPlayer2.split(" ", 2)[1]);
+        this.event2();
+        
+      },
+        error => console.log(error)
+      );
   }
 
 
   event() {
-    console.log("after event")
     this.statistics = this.AllData.cumulativeplayerstats.playerstatsentry
           .find(i => i.player.FirstName === 
         this.selectedPlayer.split(" ", 2)[0] && i.player.LastName === this.selectedPlayer.split(" ", 2)[1]);
@@ -71,17 +82,16 @@ export class PlayersComponent implements OnInit {
 
 
  event2() {
-   console.log("after event")
    this.statistics2 = this.AllData.cumulativeplayerstats.playerstatsentry
          .find(i => i.player.FirstName === 
        this.selectedPlayer2.split(" ", 2)[0] && i.player.LastName === this.selectedPlayer2.split(" ", 2)[1]);
-       this.GamesPlayed2 = Number(this.statistics.stats.GamesPlayed["#text"])
-       this.Fg2ptatt2 = Number(this.statistics.stats.Fg2PtAtt["#text"])
-       this.Fg2ptmade2 = Number(this.statistics.stats.Fg2PtMade["#text"])
-       this.Fg3ptatt2 = Number(this.statistics.stats.Fg3PtAtt["#text"])
-       this.Fg3ptmade2 = Number(this.statistics.stats.Fg3PtMade["#text"])
-       this.Ftatt2 = Number(this.statistics.stats.FtAtt["#text"])
-       this.Ftmade2 = Number(this.statistics.stats.FtMade["#text"])
+       this.GamesPlayed2 = Number(this.statistics2.stats.GamesPlayed["#text"])
+       this.Fg2ptatt2 = Number(this.statistics2.stats.Fg2PtAtt["#text"])
+       this.Fg2ptmade2 = Number(this.statistics2.stats.Fg2PtMade["#text"])
+       this.Fg3ptatt2 = Number(this.statistics2.stats.Fg3PtAtt["#text"])
+       this.Fg3ptmade2 = Number(this.statistics2.stats.Fg3PtMade["#text"])
+       this.Ftatt2 = Number(this.statistics2.stats.FtAtt["#text"])
+       this.Ftmade2 = Number(this.statistics2.stats.FtMade["#text"])
  }
 
 
