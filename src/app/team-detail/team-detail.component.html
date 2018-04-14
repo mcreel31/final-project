@@ -16,7 +16,7 @@
  {{ selectedTeam }}
 </h6>
 <div>
-   Select your favorite team:
+   <h2>Select your favorite team:</h2>
   <select [(ngModel)]="selectedTeam" (ngModelChange)="event()">
     <option *ngFor="let team of teams">{{ team.City }} {{ team.Name }}</option>
   </select>

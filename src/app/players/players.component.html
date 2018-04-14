@@ -5,15 +5,37 @@
   <div>
 <br/><br/>
 
-<h2>
-  {{player.name}} Details
-</h2>
+<h6>
+    {{ selectedPlayer }}
+</h6>
 <div>
-  <span>Id: </span> {{player.id}}
-</div>
-<div>
-  <span>Name: </span> {{player.name}}
-</div>
-<div>
-  <span>Points: </span> {{player.points}}
-</div>
+    <h2>Select a player:</h2>
+    <select [(ngModel)]="selectedPlayer" (ngModelChange)="event()">
+      <option *ngFor="let player of players">{{ player.FirstName }} {{ player.LastName }}</option>
+    </select>
+  </div>
+  <div>
+      <br/>
+      <h2>Last 10 Games:</h2>
+      <br/>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>Home</th>
+          <th>Away</th>
+          <th>Outcome</th>
+          <th>Points Scored</th>
+          <th>Points Allowed</th>
+          <th>Assists</th>
+          <th>Rebounds</th>
+          <th>Offensive Rebounds</th>
+          <th>Steals</th>
+          <th>Blocks</th>
+          <th>Turnovers</th>
+        </tr>
+        <tr *ngFor="let game of GamesLog">
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    
