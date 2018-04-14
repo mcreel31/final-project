@@ -17,6 +17,9 @@ export class PlayerDetailComponent implements OnInit {
   Position: string
   City: string
   TeamName: string
+  GamesPlayed: number;
+  Points: number;
+  PPG: number;
 
   players : PlayerInfo.Player[]
   //@Input() players: PlayerInfo.Player[];
@@ -46,6 +49,10 @@ export class PlayerDetailComponent implements OnInit {
      this.Position = this.GeneralInfo.player.Position;
      this.City = this.GeneralInfo.team.City;
      this.TeamName = this.GeneralInfo.team.Name;
-  }
+     this.GamesPlayed = Number(this.GeneralInfo.stats.GamesPlayed["#text"])
+     this.Points = (Number(this.GeneralInfo.stats.Fg2PtMade["#text"]) * 2)
+      + (Number(this.GeneralInfo.stats.Fg3PtMade["#text"]) * 3) + Number(this.GeneralInfo.stats.FtMade["#text"])
+     this.PPG = Math.round(this.Points / this.GamesPlayed * 10) / 10
+    }
 
 }

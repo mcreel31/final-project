@@ -45,8 +45,13 @@ export class TeamsComponent implements OnInit {
      } else {
       this.GamesLog = this.GamesLog.slice(0, this.GamesLog.length-1)
      }
-     
-     console.log(this.GamesLog[0].stats)
+     this.GamesLog.forEach(element => {
+       if(element.stats.Wins["#text"] == "1") {
+        element.stats.Wins["#text"] = "W"         
+       } else {
+        element.stats.Wins["#text"] = "L"
+       }
+     });
     },
      error => console.log(error)
    );
