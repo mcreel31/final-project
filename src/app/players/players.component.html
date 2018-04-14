@@ -13,29 +13,67 @@
     <select [(ngModel)]="selectedPlayer" (ngModelChange)="event()">
       <option *ngFor="let player of players">{{ player.FirstName }} {{ player.LastName }}</option>
     </select>
-  </div>
+</div>
   <div>
       <br/>
-      <h2>Last 10 Games:</h2>
+      <h2>Player Statistics:</h2>
       <br/>
       <table>
         <tr>
-          <th>Date</th>
-          <th>Home</th>
-          <th>Away</th>
-          <th>Outcome</th>
-          <th>Points Scored</th>
-          <th>Points Allowed</th>
-          <th>Assists</th>
-          <th>Rebounds</th>
-          <th>Offensive Rebounds</th>
-          <th>Steals</th>
-          <th>Blocks</th>
-          <th>Turnovers</th>
+          <th>Games Played</th>
+          <th>2 Point FG Attempts</th>
+          <th>2 Point FG Made</th>
+          <th>3 Point FG Attempts</th>
+          <th>3 Point FG Made</th>
+          <th>Free Throws Attempted</th>
+          <th>Free Throws Made</th>
         </tr>
-        <tr *ngFor="let game of GamesLog">
-          <td></td>
+        <tr>
+          <td>{{ GamesPlayed }}</td>
+          <td>{{ Fg2ptatt }}</td>
+          <td>{{ Fg2ptmade }}</td>
+          <td>{{ Fg3ptatt }}</td>
+          <td>{{ Fg3ptmade }}</td>
+          <td>{{ Ftatt }}</td>
+          <td>{{ Ftmade }}</td>
         </tr>
       </table>
     </div>
+<br/><br/>
+
+<h6>
+    {{ selectedPlayer2 }}
+</h6>
+    <div>
+        <h2>Select a player:</h2>
+        <select [(ngModel)]="selectedPlayer2" (ngModelChange)="event2()">
+          <option *ngFor="let player of players">{{ player.FirstName }} {{ player.LastName }}</option>
+        </select>
+    </div>
+
+    <div>
+        <br/>
+        <h2>Player Statistics:</h2>
+        <br/>
+        <table>
+          <tr>
+              <th>Games Played</th>
+              <th>2 Point FG Attempts</th>
+              <th>2 Point FG Made</th>
+              <th>3 Point FG Attempts</th>
+              <th>3 Point FG Made</th>
+              <th>Free Throws Attempted</th>
+              <th>Free Throws Made</th>
+          </tr>
+          <tr>
+              <td>{{ GamesPlayed2 }}</td>
+              <td>{{ Fg2ptatt2 }}</td>
+              <td>{{ Fg2ptmade2 }}</td>
+              <td>{{ Fg3ptatt2 }}</td>
+              <td>{{ Fg3ptmade2 }}</td>
+              <td>{{ Ftatt2 }}</td>
+              <td>{{ Ftmade2 }}</td>
+          </tr>
+        </table>
+      </div>
     
