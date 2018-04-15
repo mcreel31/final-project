@@ -12,6 +12,7 @@ export class PlayersComponent implements OnInit {
   //var that api data gets put into
   AllData : PlayerInfo.RootObject
   players: PlayerInfo.Player[] = []
+  last: number
   selectedPlayer: string = 'Pick a Player!'
   statistics: PlayerInfo.Playerstatsentry
   Position: string
@@ -22,6 +23,11 @@ export class PlayersComponent implements OnInit {
   Fg3ptmade: number
   Ftatt: number
   Ftmade: number
+  Points: number;
+  PPG: number;
+  Fg2ptpct: number;
+  Fg3ptpct: number;
+  Ftpct: number;
 
   selectedPlayer2: string = 'Pick a Player!'
   statistics2: PlayerInfo.Playerstatsentry
@@ -33,6 +39,11 @@ export class PlayersComponent implements OnInit {
   Fg3ptmade2: number
   Ftatt2: number
   Ftmade2: number
+  Points2: number;
+  PPG2: number;
+  Fg2ptpct2: number;
+  Fg3ptpct2: number;
+  Ftpct2: number;
 
 
   constructor(private _playersService: PlayersService) { }
@@ -46,6 +57,7 @@ export class PlayersComponent implements OnInit {
         this.statistics = this.AllData.cumulativeplayerstats.playerstatsentry
           .find(i => i.player.FirstName === 
         this.selectedPlayer.split(" ", 2)[0] && i.player.LastName === this.selectedPlayer.split(" ", 2)[1]);
+
         this.event();
         
       },
@@ -55,10 +67,12 @@ export class PlayersComponent implements OnInit {
      .subscribe(data => {
         this.AllData = data;
         this.players = this.AllData.cumulativeplayerstats.playerstatsentry.map(a => a.player)
-        this.selectedPlayer2 = this.players[0].FirstName + " " + this.players[0].LastName
+        this.last = this.players.length-1
+        this.selectedPlayer2 = this.players[this.last].FirstName + " " + this.players[this.last].LastName
         this.statistics2 = this.AllData.cumulativeplayerstats.playerstatsentry
           .find(i => i.player.FirstName === 
         this.selectedPlayer2.split(" ", 2)[0] && i.player.LastName === this.selectedPlayer2.split(" ", 2)[1]);
+
         this.event2();
         
       },
@@ -78,6 +92,12 @@ export class PlayersComponent implements OnInit {
         this.Fg3ptmade = Number(this.statistics.stats.Fg3PtMade["#text"])
         this.Ftatt = Number(this.statistics.stats.FtAtt["#text"])
         this.Ftmade = Number(this.statistics.stats.FtMade["#text"])
+        this.Points = (Number(this.statistics.stats.Fg2PtMade["#text"]) * 2)
+        + (Number(this.statistics.stats.Fg3PtMade["#text"]) * 3) + Number(this.statistics.stats.FtMade["#text"])
+        this.PPG = Math.round(this.Points / this.GamesPlayed * 10) / 10
+        this.Fg2ptpct = Math.round(this.Fg2ptmade / this.Fg2ptatt * 100)
+        this.Fg3ptpct = Math.round(this.Fg3ptmade / this.Fg3ptatt * 100)
+        this.Ftpct = Math.round(this.Ftmade / this.Ftatt * 100)
   }
 
 
@@ -92,6 +112,12 @@ export class PlayersComponent implements OnInit {
        this.Fg3ptmade2 = Number(this.statistics2.stats.Fg3PtMade["#text"])
        this.Ftatt2 = Number(this.statistics2.stats.FtAtt["#text"])
        this.Ftmade2 = Number(this.statistics2.stats.FtMade["#text"])
+       this.Points2 = (Number(this.statistics2.stats.Fg2PtMade["#text"]) * 2)
+        + (Number(this.statistics2.stats.Fg3PtMade["#text"]) * 3) + Number(this.statistics2.stats.FtMade["#text"])
+       this.PPG2 = Math.round(this.Points2 / this.GamesPlayed2 * 10) / 10
+       this.Fg2ptpct2 = Math.round(this.Fg2ptmade2 / this.Fg2ptatt2 * 100)
+       this.Fg3ptpct2 = Math.round(this.Fg3ptmade2 / this.Fg3ptatt2 * 100)
+       this.Ftpct2 = Math.round(this.Ftmade2 / this.Ftatt2 * 100)
  }
 
 
